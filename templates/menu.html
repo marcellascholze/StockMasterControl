@@ -1,0 +1,13 @@
+{% extends "template.html"%}
+{%block conteudo%}
+      <form action="{{url_for('menu')}}" method="post">
+        <fieldset>
+            <button type="button" class="btn btn-primary btn-salvar">Cadastrar novo produto</button>
+            <button type="button" class="btn btn-primary btn-salvar">Visualizar estoque</button>
+            <button type="button" class="btn btn-primary btn-salvar">Cadastrar nova venda</button>
+            <button type="button" class="btn btn-primary btn-salvar">Historico de venda</button>
+            <button type="button" class="btn btn-primary btn-salvar">Visualizar métricas mensais</button>
+            <button type="button" class="btn btn-primary btn-salvar">Sair</button>
+        </fieldset>
+      </form>
+{%endblock%}
