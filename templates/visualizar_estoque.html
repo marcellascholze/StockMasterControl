@@ -1,0 +1,37 @@
+{% extends "template.html"%}
+{%block conteudo%}
+        <table class="table table-striped table-responsive table-bordered">
+            <thead class="thead-default">
+                <tr>
+                    <th>Nome</th>
+                    <th>Modelo</th>
+                    <th>Preço de custo</th>
+                    <th>Preço sugerido</th>
+                    <th>Quantidade</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for produto in  produtos%}
+                <tr>
+                    <td>{{produto.nome}}</td>
+                    <td>{{produto.modelo}}</td>
+                    <td>{{produto.preco_custo}}</td>
+                    <td>{{produto.preco_sugerido}}</td>
+                    <td>{{produto.quantidade}}</td>
+                    
+                    <td>
+                        <a href = "{{url_for('editar_produto', id = produto.id )}}">Editar</a>
+                        <a href = "{{url_for('deletar_produto', id = produto.id )}}">Deletar</a>
+                    </td>
+                </tr>
+                {%endfor%}
+            </tbody>
+        </table>
+
+         <div>
+             <a href="{{url_for('menu')}}">
+                <button type="button" class="btn btn-info btn-group-vertical mb-xxl-4 center">Voltar</button>
+             </a>
+         </div>
+
+{%endblock%}

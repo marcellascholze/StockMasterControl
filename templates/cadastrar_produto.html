@@ -1,0 +1,43 @@
+{% extends "template.html"%}
+{%block conteudo%}
+      <form action="{{url_for('criar_produto')}}" method="post">
+        <fieldset>
+          <div class="form-group">
+            <label for="nome">Nome</label>
+            <input type="text" id="nome" name="nome" class="form-control">
+          </div>
+          <div class="form-group">
+            <label for="modelo">Modelo</label>
+            <input type="text" id="modelo" name="modelo" class="form-control">
+          </div>
+           <div class="form-group">
+            <label for="data_compra">Data de compra</label>
+            <input type="date" id="data_compra" name="data_compra" class="form-control">
+           </div>
+
+           <div class="form-group">
+             <label for="custo_compra">Preço de compra</label>
+             <input type="number" id="custo_compra" name="custo_compra" class="form-control">
+           </div>
+
+           <div class="form-group">
+             <label for="preco_sugerido">Preço sugerido</label>
+             <input type="number" id="preco_sugerido" name="preco_sugerido" class="form-control">
+           </div>
+
+            <div class="form-group">
+            <label for="quantidade">Quantidade</label>
+            <input type="number" id="quantidade" name="quantidade" class="form-control">
+          </div>
+            <div>
+                <label></label>
+            </div>
+            <div>
+                <button type="submit" class="btn btn-primary btn-salvar">Salvar</button>
+            </div>
+
+
+
+        </fieldset>
+      </form>
+{%endblock%}

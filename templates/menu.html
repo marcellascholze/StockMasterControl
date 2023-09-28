@@ -1,13 +1,42 @@
 {% extends "template.html"%}
 {%block conteudo%}
-      <form action="{{url_for('menu')}}" method="post">
+      <form action="{{url_for('menu')}}">
         <fieldset>
-            <button type="button" class="btn btn-primary btn-salvar">Cadastrar novo produto</button>
-            <button type="button" class="btn btn-primary btn-salvar">Visualizar estoque</button>
-            <button type="button" class="btn btn-primary btn-salvar">Cadastrar nova venda</button>
-            <button type="button" class="btn btn-primary btn-salvar">Historico de venda</button>
-            <button type="button" class="btn btn-primary btn-salvar">Visualizar métricas mensais</button>
-            <button type="button" class="btn btn-primary btn-salvar">Sair</button>
+            <div>
+                <label></label>
+            </div>
+            <div>
+                <a href="{{url_for('cadastrar_produto')}}">
+                    <button type="button" class="btn btn-info btn-group-vertical mb-xxl-4 center">Cadastrar novo produto</button>
+                </a>
+            </div>
+            <div>
+                <a href="{{url_for('visualizar_estoque')}}">
+                    <button type="button" class="btn btn-info btn-group-vertical mb-xxl-4 center">Visualizar estoque</button>
+                </a>
+            </div>
+            <div>
+                <a href="{{url_for('cadastrar_venda')}}">
+                    <button type="button" class="btn btn-info btn-group-vertical mb-xxl-4 center">Cadastrar nova venda</button>
+                </a>
+            </div>
+            <div>
+                <a href="{{url_for('historico_vendas')}}">
+                    <button type="button" class="btn btn-info btn-group-vertical mb-xxl-4 center">Historico de venda</button>
+                </a>
+            </div>
+            <div>
+                 <a href="{{url_for('visualizar_metricas')}}">
+                    <button type="button" class="btn btn-info btn-group-vertical mb-xxl-4 center">Visualizar métricas mensais</button>
+                 </a>
+            </div>
+
+            <div>
+                <a href="{{url_for('menu')}}">
+                    <button type="button" class="btn btn-info btn-group-vertical mb-xxl-4 center">Sair</button>
+                </a>
+            </div>
+
         </fieldset>
       </form>
 {%endblock%}

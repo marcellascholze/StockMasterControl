@@ -1,0 +1,65 @@
+{% extends "template.html"%}
+{%block conteudo%}
+      <form action="{{url_for('criar_venda')}}" method="post">
+        <fieldset>
+          <div class="form-group">
+            <label for="nome_cliente">Nome do cliente</label>
+            <input type="text" id="nome_cliente" name="nome" class="form-control">
+          </div>
+          <div class="form-group">
+            <label for="data_venda">Data da venda</label>
+            <input type="date" id="data_venda" name="data_venda" class="form-control">
+          </div>
+           <div class="form-group">
+            <label for="produto">Produto</label>
+            <input type="date" id="produto" name="produto" class="form-control">
+           </div>
+
+           <div class="form-group">
+             <label for="quantidade">Quantidade</label>
+             <input type="number" id="quantidade" name="quantidade" class="form-control">
+           </div>
+
+           <div class="form-group">
+             <label for="tipo_entrega">Tipo de entrega</label>
+             <input type="text" id="tipo_entrega" name="tipo_entrega" class="form-control">
+           </div>
+
+            <div class="form-group">
+            <label for="valor_entrega">Valor_entrega</label>
+            <input type="number" id="valor_entrega" name="valor_entrega" class="form-control">
+          </div>
+
+           <div class="form-group">
+            <label for="forma_pagamento">Forma de pagamento</label>
+            <input type="text" id="forma_pagamento" name="forma_pagamento" class="form-control">
+          </div>
+
+           <div class="form-group">
+            <label for="plataforma_vendas">Plataforma de vendas</label>
+            <input type="text" id="plataforma_vendas" name="plataforma_vendas" class="form-control">
+          </div>
+
+           <div class="form-group">
+            <label for="valor_bruto">Valor bruto</label>
+            <input type="number" id="valor_bruto" name="valor_bruto" class="form-control">
+          </div>
+
+           <div class="form-group">
+            <label for="lucro">Lucro</label>
+            <input type="text" id="lucro" name="lucro" class="form-control">
+          </div>
+
+
+            <div>
+                <label></label>
+            </div>
+            <div>
+                <button type="submit" class="btn btn-primary btn-salvar">Salvar</button>
+            </div>
+
+
+
+        </fieldset>
+      </form>
+{%endblock%}
