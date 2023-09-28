@@ -4,21 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="77f38416-ba5e-463f-a1a4-3fdfa1e58a4c" name="Changes" comment="teste">
-      <change afterPath="$PROJECT_DIR$/models.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/bootstrap.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/cadastrar_produto.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/cadastrar_usuario.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/cadastrar_venda.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/historico_vendas.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/login.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/visualizar_estoque.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/visualizar_metricas.html" afterDir="false" />
+    <list default="true" id="77f38416-ba5e-463f-a1a4-3fdfa1e58a4c" name="Changes" comment="telas navegaveis">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config.py" beforeDir="false" afterPath="$PROJECT_DIR$/config.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/stock_master_control.py" beforeDir="false" afterPath="$PROJECT_DIR$/stock_master_control.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/menu.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/menu.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/template.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/template.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/views.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -133,7 +120,15 @@
       <option name="project" value="LOCAL" />
       <updated>1695838272199</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="telas navegaveis">
+      <option name="closed" value="true" />
+      <created>1695862029642</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1695862029642</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -149,6 +144,7 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="teste" />
-    <option name="LAST_COMMIT_MESSAGE" value="teste" />
+    <MESSAGE value="telas navegaveis" />
+    <option name="LAST_COMMIT_MESSAGE" value="telas navegaveis" />
   </component>
 </project>
