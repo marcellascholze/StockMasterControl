@@ -24,19 +24,6 @@ def cadastrar_produto():
 
 @app.route('/criar_produto',methods = ['POST',])
 def criar_produto():
-    nome = request. form['nome']
-    modelo = request. form['categoria']
-    console = request. form['console']
-
-    jogo = Jogos.query.filter_by(nome = nome).first()
-
-    if(jogo):
-        flash('Jogo já existente')
-        return redirect(url_for('index'))
-
-    novo_jogo = Jogos(nome = nome, categoria = categoria, console = console)
-    db.session.add(novo_jogo)
-    db.session.commit()
 
     return redirect(url_for('menu'))
 
