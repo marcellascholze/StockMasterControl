@@ -1,8 +1,7 @@
 from flask import render_template, request, redirect, session, flash, url_for
 from stock_master_control import app,db
-#from models import Jogos, Usuarios
 
-@app.route('/')
+@app.route('/menu')
 def menu():
     return render_template('menu.html', titulo = 'Menu')
 
@@ -18,38 +17,29 @@ def historico_vendas():
     return render_template('historico_vendas.html', titulo = 'Histórico de vendas')
 @app.route('/novo_produto')
 def cadastrar_produto():
-    #if('usuario_logado' not in session or session['usuario_logado'] == None):
-        #return  redirect(url_for('login', proxima = url_for('cadastrar_jogos')))
+    if('usuario_logado' not in session or session['usuario_logado'] == None):
+        return  redirect(url_for('login', proxima = url_for('cadastrar_produto')))
 
     return render_template('cadastrar_produto.html', titulo = 'Cadastrar novo produto')
 
 @app.route('/criar_produto',methods = ['POST',])
 def criar_produto():
-    """nome = request.form['nome']
-    categoria = request.form['categoria']
-    console = request.form['console']
+    nome = request. form['nome']
+    modelo = request. form['categoria']
+    console = request. form['console']
 
-    jogo = Jogos.query.filter_by(nome=nome).first()
+    jogo = Jogos.query.filter_by(nome = nome).first()
 
-    if jogo:
-        flash('Jogo já existente!')
+    if(jogo):
+        flash('Jogo já existente')
         return redirect(url_for('index'))
 
-    novo_jogo = Jogos(nome=nome, categoria=categoria, console=console)
+    novo_jogo = Jogos(nome = nome, categoria = categoria, console = console)
     db.session.add(novo_jogo)
-    db.session.commit()"""
+    db.session.commit()
 
     return redirect(url_for('menu'))
 
-@app.route('/cadastrar_usuario')
-def cadastrar_usuario():
-
-    return render_template('cadastrar_usuario.html', titulo = 'Cadastrar novo usuário')
-
-@app.route('/criar_usuario',methods = ['POST',])
-def criar_usuario():
-
-    return redirect(url_for('menu'))
 @app.route('/nova_venda')
 def cadastrar_venda():
 
@@ -64,21 +54,6 @@ def criar_venda():
 def editar(id):
 
     return render_template('editar_produto.html', titulo = 'Editar produto')
-
-@app.route('/login')
-def login():
-    proxima = request.args.get('proxima')
-    return render_template('login.html', proxima = proxima)
-
-@app.route('/autenticar', methods = ['POST',])
-def autenticar():
-    pass
-
-@app.route('/logout')
-def logout():
-    session['usuario_logado'] = None
-    flash("Logout efetuado com sucesso")
-    return redirect(url_for('index'))
 
 
 
