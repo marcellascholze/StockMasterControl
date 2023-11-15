@@ -11,7 +11,7 @@ def menu():
 
 @app.route('/visualizar_estoque')
 def visualizar_estoque():
-    produtos_lista = Produto.query.order_by(Produto.id)
+    produtos_lista = Produto.query.filter_by(usuario_id=session['usuario_id']).order_by(Produto.id)
     return render_template('visualizar_estoque.html', titulo = 'Estoque', produtos = produtos_lista)
 @app.route('/novo_produto')
 def cadastrar_produto():
@@ -85,7 +85,7 @@ def editar_produto(id):
     if ('usuario_logado' not in session or session['usuario_logado'] == None):
         return redirect(url_for('login', proxima=url_for('editar_produto')))
 
-    produto = Produto.query.filter_by(id=id).first()
+    produto = Produto.query.filter_by(id=id, usuario_id=session['usuario_id']).first()
 
     return render_template('editar_produto.html', titulo = 'Editar produto', produto = produto)
 
@@ -176,7 +176,7 @@ def criar_venda():
 
 @app.route('/historico_vendas')
 def historico_vendas():
-    vendas= Venda.query.order_by(Venda.id)
+    vendas= Venda.query.filter_by(usuario_id=session['usuario_id']).order_by(Venda.id)
 
     vendas_lista = []
 
@@ -358,5 +358,5 @@ def deletar_metrica(id):
 
 @app.route('/visualizar_metricas')
 def visualizar_metricas():
-    metricas_lista = Metrica.query.order_by(Metrica.id)
+    metricas_lista = Metrica.query.filter_by(usuario_id=session['usuario_id']).order_by(Metrica.id)
     return render_template('visualizar_metricas.html', titulo = 'Fechamento do mês', metricas = metricas_lista)
