@@ -1,24 +1,20 @@
 {% extends "template.html"%}
 {%block conteudo%}
-        {% if mensagem_erro %}
-            <div class="alert alert-danger" role="alert">
-                {{ mensagem_erro }}
-            </div>
-        {% endif %}
-      <form action="{{url_for('criar_venda')}}" method="post">
+      <form action="{{url_for('atualizar_venda')}}" method="post">
         <fieldset>
+            <input type="hidden" name="id" value="{{venda.id}}">
           <div class="form-group">
             <label for="nome_cliente">Nome do cliente</label>
-            <input type="text" id="nome_cliente" name="nome_cliente" class="form-control" required>
+            <input type="text" id="nome_cliente" name="nome_cliente" class="form-control" value="{{venda.nome_cliente}}" required>
           </div>
           <div class="form-group">
             <label for="data_venda">Data da venda</label>
-            <input type="date" id="data_venda" name="data_venda" class="form-control" required>
+            <input type="date" id="data_venda" name="data_venda" class="form-control" value="{{venda.data_venda}}" required>
           </div>
            <div class="form-group">
             <label for="produto">Produto</label>
             <select class="form-select" id="produto" name="produto" required>
-                <option value="" selected disabled hidden>Selecione...</option>
+                <option value="{{venda.produto_id}}">{{produto.nome}} - {{produto.modelo}}</option>
                 {% for opcao in opcoes_produtos %}
                 <option value="{{ opcao.id }}">{{ opcao.nome }} - {{opcao.modelo}}</option>
                 {% endfor %}
@@ -27,13 +23,13 @@
 
            <div class="form-group">
              <label for="quantidade">Quantidade</label>
-             <input type="number" id="quantidade" name="quantidade" class="form-control" required>
+             <input type="number" id="quantidade" name="quantidade" class="form-control" value="{{venda.quantidade}}" required>
            </div>
 
            <div class="form-group">
              <label for="tipo_entrega">Tipo de entrega</label>
               <select class="form-select" id="tipo_entrega" name="tipo_entrega" required>
-                <option value="" selected disabled hidden>Selecione...</option>
+                <option value="{{venda.tipo_entrega}}">{{venda.tipo_entrega}}</option>
                 {% for opcao in opcoes_tipo_entrega %}
                 <option value="{{ opcao }}">{{ opcao }}</option>
                 {% endfor %}
@@ -42,13 +38,13 @@
 
             <div class="form-group">
             <label for="valor_entrega">Valor da entrega</label>
-            <input type="number" id="valor_entrega" name="valor_entrega" class="form-control">
+            <input type="number" id="valor_entrega" name="valor_entrega" class="form-control" value="{{venda.valor_entrega}}">
           </div>
 
            <div class="form-group">
             <label for="forma_pagamento">Forma de pagamento</label>
             <select class="form-select" id="forma_pagamento" name="forma_pagamento" required>
-                <option value="" selected disabled hidden>Selecione...</option>
+                <option value="{{venda.forma_pagamento}}">{{venda.forma_pagamento}}</option>
                 {% for opcao in opcoes_forma_pagamento %}
                 <option value="{{ opcao }}">{{ opcao }}</option>
                 {% endfor %}
@@ -58,7 +54,7 @@
            <div class="form-group mb-3" >
             <label for="plataforma_venda" class="form-label">Plataforma de vendas</label>
             <select class="form-select" id="plataforma_venda" name="plataforma_venda" required>
-                <option value="" selected disabled hidden>Selecione...</option>
+                <option value="{{venda.plataforma_venda}}">{{venda.plataforma_venda}}</option>
                 {% for opcao in opcoes_plataforma %}
                 <option value="{{ opcao }}">{{ opcao }}</option>
                 {% endfor %}
@@ -67,12 +63,12 @@
 
            <div class="form-group">
             <label for="valor_bruto">Valor bruto</label>
-            <input type="number" id="valor_bruto" name="valor_bruto" class="form-control" required>
+            <input type="number" id="valor_bruto" name="valor_bruto" class="form-control" value="{{venda.valor_venda}}" required>
           </div>
 
            <div class="form-group">
             <label for="lucro">Lucro</label>
-            <input type="number" id="lucro" name="lucro" class="form-control" required>
+            <input type="number" id="lucro" name="lucro" class="form-control" value="{{venda.lucro}}" required>
           </div>
 
 

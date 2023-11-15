@@ -4,6 +4,7 @@
             <thead class="thead-default">
                 <tr>
                     <th>Mês</th>
+                    <th>Ano</th>
                     <th>Valor investido</th>
                     <th>Custo de entrega</th>
                     <th>Valor faturado</th>
@@ -14,12 +15,17 @@
                 {% for metrica in  metricas%}
                 <tr>
                     <td>{{metrica.mes}}</td>
+                    <td>{{metrica.ano}}</td>
                     <td>{{metrica.valor_investido}}</td>
                     <td>{{metrica.custo_entrega}}</td>
-                    <td>{{metrica.valor_faturado}}</td>
+                    <td>{{metrica.faturamento}}</td>
                     <td>{{metrica.lucro}}</td>
 
+                    <td>
+                        <a href = "{{url_for('deletar_metrica', id = metrica.id )}}">Deletar</a>
+                    </td>
                 </tr>
+
                 {%endfor%}
             </tbody>
         </table>

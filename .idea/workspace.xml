@@ -4,8 +4,17 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="77f38416-ba5e-463f-a1a4-3fdfa1e58a4c" name="Changes" comment="telas navegaveis">
+    <list default="true" id="77f38416-ba5e-463f-a1a4-3fdfa1e58a4c" name="Changes" comment="voltar pra telas navegaveis">
+      <change afterPath="$PROJECT_DIR$/templates/editar_produto.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/editar_venda.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/auth.py" beforeDir="false" afterPath="$PROJECT_DIR$/auth.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/cadastrar_produto.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/cadastrar_produto.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/cadastrar_venda.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/cadastrar_venda.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/historico_vendas.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/historico_vendas.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/visualizar_estoque.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/visualizar_estoque.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/visualizar_metricas.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/visualizar_metricas.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/views.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -16,31 +25,31 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="HTML File" />
         <option value="Python Script" />
+        <option value="HTML File" />
       </list>
     </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="ProjectColorInfo"><![CDATA[{
-  "associatedIndex": -1
-}]]></component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 4
+}</component>
   <component name="ProjectId" id="2VzU3MKJxs7hPmqdl1QiXqeDYeb" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "DefaultHtmlFileTemplate": "HTML File",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "main",
-    "last_opened_file_path": "C:/Users/Marcella/Documents/5periodo/aps/python"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;DefaultHtmlFileTemplate&quot;: &quot;HTML File&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/Marcella/Documents/5periodo/aps/python&quot;
   }
-}]]></component>
+}</component>
   <component name="RunManager">
     <configuration default="true" type="Tox" factoryName="Tox">
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -128,7 +137,23 @@
       <option name="project" value="LOCAL" />
       <updated>1695862029642</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="cadastro usuario">
+      <option name="closed" value="true" />
+      <created>1696872311117</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1696872311117</updated>
+    </task>
+    <task id="LOCAL-00004" summary="voltar pra telas navegaveis">
+      <option name="closed" value="true" />
+      <created>1696885634291</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1696885634291</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -145,6 +170,8 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="teste" />
     <MESSAGE value="telas navegaveis" />
-    <option name="LAST_COMMIT_MESSAGE" value="telas navegaveis" />
+    <MESSAGE value="cadastro usuario" />
+    <MESSAGE value="voltar pra telas navegaveis" />
+    <option name="LAST_COMMIT_MESSAGE" value="voltar pra telas navegaveis" />
   </component>
 </project>

@@ -16,18 +16,18 @@
                 </tr>
             </thead>
             <tbody>
-                {% for venda in  vendas%}
+                {% for venda, produto in  vendas%}
                 <tr>
                     <td>{{venda.data_venda}}</td>
                     <td>{{venda.nome_cliente}}</td>
-                    <td>{{venda.produto}}</td>
+                    <td>{{produto}}</td>
                     <td>{{venda.quantidade}}</td>
                     <td>{{venda.tipo_entrega}}</td>
                     <td>{{venda.valor_entrega}}</td>
                     <td>{{venda.forma_pagamento}}</td>
-                    <td>{{venda.valor_bruto}}</td>
+                    <td>{{venda.valor_venda}}</td>
                     <td>{{venda.lucro}}</td>
-                    <td>{{venda.plataforma_vendas}}</td>
+                    <td>{{venda.plataforma_venda}}</td>
                     
                     <td>
                         <a href = "{{url_for('editar_venda', id = venda.id )}}">Editar</a>

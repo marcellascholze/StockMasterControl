@@ -14,6 +14,7 @@ def autenticar():
         senha = usuario.senha
         if (request.form['senha'] == senha):
             session['usuario_logado'] = usuario.login
+            session['usuario_id'] = usuario.id
             flash(usuario.login + ' logado com sucesso!')
             proxima_pagina = url_for('menu')
             if (request.form['proxima'] != 'None'):
