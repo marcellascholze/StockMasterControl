@@ -4,8 +4,20 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="77f38416-ba5e-463f-a1a4-3fdfa1e58a4c" name="Changes" comment="cruds metrica, produto e venda funcionando">
+    <list default="true" id="77f38416-ba5e-463f-a1a4-3fdfa1e58a4c" name="Changes" comment="filtrando dados pelo usuario">
+      <change afterPath="$PROJECT_DIR$/templates/editar_usuario.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/auth.py" beforeDir="false" afterPath="$PROJECT_DIR$/auth.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/cadastrar_produto.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/cadastrar_produto.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/cadastrar_venda.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/cadastrar_venda.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/editar_produto.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/editar_produto.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/editar_venda.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/editar_venda.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/historico_vendas.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/historico_vendas.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/login.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/menu.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/menu.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/template.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/template.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/visualizar_estoque.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/visualizar_estoque.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/visualizar_metricas.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/visualizar_metricas.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/views.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -166,7 +178,15 @@
       <option name="project" value="LOCAL" />
       <updated>1700085653314</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="filtrando dados pelo usuario">
+      <option name="closed" value="true" />
+      <created>1700085995263</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1700085995263</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -186,6 +206,7 @@
     <MESSAGE value="cadastro usuario" />
     <MESSAGE value="voltar pra telas navegaveis" />
     <MESSAGE value="cruds metrica, produto e venda funcionando" />
-    <option name="LAST_COMMIT_MESSAGE" value="cruds metrica, produto e venda funcionando" />
+    <MESSAGE value="filtrando dados pelo usuario" />
+    <option name="LAST_COMMIT_MESSAGE" value="filtrando dados pelo usuario" />
   </component>
 </project>

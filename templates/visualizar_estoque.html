@@ -20,8 +20,8 @@
                     <td>{{produto.quantidade}}</td>
                     
                     <td>
-                        <a href = "{{url_for('editar_produto', id = produto.id )}}">Editar</a>
-                        <a href = "{{url_for('deletar_produto', id = produto.id )}}">Deletar</a>
+                        <a href = "{{url_for('editar_produto', id = produto.id )}}"><i class="fas fa-edit"></i></a>
+                        <a href = "{{url_for('deletar_produto', id = produto.id )}}"><i class="fas fa-trash-alt"></i></a>
                     </td>
                 </tr>
                 {%endfor%}
@@ -30,7 +30,7 @@
 
          <div>
              <a href="{{url_for('menu')}}">
-                <button type="button" class="btn btn-info btn-group-vertical mb-xxl-4 center">Voltar</button>
+                <button type="button" class="btn btn-primary">Voltar</button>
              </a>
          </div>
 

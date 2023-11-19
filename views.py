@@ -5,7 +5,8 @@ from models import *
 
 @app.route('/menu')
 def menu():
-    return render_template('menu.html', titulo = 'Menu')
+    usuario = Usuario.query.filter_by(id=session['usuario_id']).first()
+    return render_template('menu.html', titulo = 'Menu', usuario=usuario)
 
 """"--------------------------------------------------produto--------------------------------------------------------"""
 
@@ -96,7 +97,9 @@ def deletar_produto(id):
 
     venda = Venda.query.filter_by(produto_id=id).first()
     if (not venda):
+        produto_deletado= Produto.query.filter_by(id=id).first()
         produto = Produto.query.filter_by(id=id).delete()
+        upsert_metrica_compra_deletada(produto_deletado)
         db.session.commit()
         flash('Produto deletado com sucesso')
     else:
@@ -260,7 +263,12 @@ def deletar_venda(id):
     if ('usuario_logado' not in session or session['usuario_logado'] == None):
         return redirect(url_for('login'))
 
+    venda_deletada = Venda.query.filter_by(id=id).first()
+    produto = Produto.query.filter_by(id=venda_deletada.produto_id).first()
+    produto.quantidade += venda_deletada.quantidade
     venda = Venda.query.filter_by(id=id).delete()
+    upsert_metrica_venda_deletada(venda_deletada)
+    db.session.add(produto)
     db.session.commit()
     flash('Venda deletado com sucesso')
 
@@ -298,6 +306,9 @@ def upsert_metrica_venda_atualiza(venda, valor_antigo,custo_entrega_antigo):
     ano = data_venda.year
 
     metrica = Metrica.query.filter_by(mes=mes, ano=ano).first()
+
+    if (not metrica): return;
+
     metrica.custo_entrega -= custo_entrega_antigo
     metrica.custo_entrega += float(venda.valor_entrega)
     metrica.faturamento -= valor_antigo
@@ -306,6 +317,22 @@ def upsert_metrica_venda_atualiza(venda, valor_antigo,custo_entrega_antigo):
 
     db.session.add(metrica)
     db.session.commit()
+
+def upsert_metrica_venda_deletada(venda_deletada):
+    mes = venda_deletada.data_venda.month
+    ano = venda_deletada.data_venda.year
+
+    metrica = Metrica.query.filter_by(mes=mes, ano=ano).first()
+
+    if (not metrica): return;
+
+    metrica.custo_entrega -= venda_deletada.valor_entrega
+    metrica.faturamento -= venda_deletada.valor_venda
+    metrica.lucro -= venda_deletada.valor_venda
+
+    db.session.add(metrica)
+    db.session.commit()
+
 
 
 def upsert_metrica_compra(produto):
@@ -337,8 +364,25 @@ def upsert_metrica_compra_atualiza(produto, quantidade_antiga,custo_produto_anti
     custo_antigo = quantidade_antiga * custo_produto_antigo
 
     metrica = Metrica.query.filter_by(mes=mes, ano=ano).first()
+
+    if(not metrica): return;
+
     metrica.valor_investido -= custo_antigo
     metrica.valor_investido += produto.custo_compra * produto.quantidade
+    metrica.lucro = metrica.faturamento - metrica.valor_investido
+
+    db.session.add(metrica)
+    db.session.commit()
+
+def upsert_metrica_compra_deletada(produto_deletado):
+    mes = produto_deletado.data_compra.month
+    ano = produto_deletado.data_compra.year
+
+    metrica = Metrica.query.filter_by(mes=mes, ano=ano).first()
+
+    if (not metrica): return;
+
+    metrica.valor_investido -= produto_deletado.custo_compra * produto_deletado.quantidade
     metrica.lucro = metrica.faturamento - metrica.valor_investido
 
     db.session.add(metrica)

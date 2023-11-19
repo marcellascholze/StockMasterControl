@@ -1,39 +1,36 @@
 {% extends "template.html"%}
 {%block conteudo%}
+
       <form action="{{url_for('menu')}}">
         <fieldset>
-            <div>
-                <label></label>
-            </div>
-            <div>
+            <label></label>
+             <div class="btn-group-vertical">
                 <a href="{{url_for('cadastrar_produto')}}">
-                    <button type="button" class="btn btn-info btn-group-vertical mb-xxl-4 center">Cadastrar novo produto</button>
+                    <button type="button" class="btn btn-primary">Cadastrar novo produto</button>
                 </a>
-            </div>
-            <div>
-                <a href="{{url_for('visualizar_estoque')}}">
-                    <button type="button" class="btn btn-info btn-group-vertical mb-xxl-4 center">Visualizar estoque</button>
-                </a>
-            </div>
-            <div>
-                <a href="{{url_for('cadastrar_venda')}}">
-                    <button type="button" class="btn btn-info btn-group-vertical mb-xxl-4 center">Cadastrar nova venda</button>
-                </a>
-            </div>
-            <div>
-                <a href="{{url_for('historico_vendas')}}">
-                    <button type="button" class="btn btn-info btn-group-vertical mb-xxl-4 center">Historico de venda</button>
-                </a>
-            </div>
-            <div>
-                 <a href="{{url_for('visualizar_metricas')}}">
-                    <button type="button" class="btn btn-info btn-group-vertical mb-xxl-4 center">Visualizar métricas mensais</button>
-                 </a>
-            </div>
 
-            <div>
+                <a href="{{url_for('visualizar_estoque')}}">
+                    <button type="button" class="btn btn-primary">Visualizar estoque</button>
+                </a>
+
+                <a href="{{url_for('cadastrar_venda')}}">
+                    <button type="button" class="btn btn-primary">Cadastrar nova venda</button>
+                </a>
+
+                <a href="{{url_for('historico_vendas')}}">
+                    <button type="button" class="btn btn-primary">Historico de venda</button>
+                </a>
+
+                 <a href="{{url_for('visualizar_metricas')}}">
+                    <button type="button" class="btn btn-primary">Visualizar métricas mensais</button>
+                 </a>
+
+                 <a href="{{url_for('editar_usuario', id = usuario.id) }}">
+                    <button type="button" class="btn btn-primary">Editar usuário</button>
+                 </a>
+
                 <a href="{{url_for('logout')}}">
-                    <button type="button" class="btn btn-info btn-group-vertical mb-xxl-4 center">Sair</button>
+                    <button type="button" class="btn btn-primary">Sair</button>
                 </a>
             </div>
 

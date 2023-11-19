@@ -54,5 +54,31 @@ def criar_usuario():
 
     return redirect(url_for('login'))
 
+@app.route('/editar_usuario/<int:id>')
+def editar_usuario(id):
+    if ('usuario_logado' not in session or session['usuario_logado'] == None):
+        return redirect(url_for('login', proxima=url_for('editar_usuario')))
 
+    usuario = Usuario.query.filter_by(id=id).first()
+
+    return render_template('editar_usuario.html',
+                           titulo = 'Editar usuário',
+                           usuario = usuario)
+
+
+@app.route('/atualizar_usuario',methods = ['POST',])
+def atualizar_usuario():
+
+    usuario = Usuario.query.filter_by(id=request.form['id']).first()
+
+    usuario.nome = request.form['nome']
+    usuario.senha = request.form['senha']
+
+    db.session.add(usuario)
+    db.session.commit()
+
+
+    flash('Usuário atualizado com sucesso')
+
+    return redirect(url_for('menu'))
 

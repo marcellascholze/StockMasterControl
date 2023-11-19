@@ -7,6 +7,19 @@
     <link rel="stylesheet" href="{{ url_for('static', filename='bootstrap.css') }}">
   </head>
   <body>
+  <style>
+        /* Custom CSS styles */
+        /* Add your custom styles here if needed */
+        .btn-group-vertical {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .btn-group-vertical .btn {
+            width: 400px; /* Defina o tamanho desejado */
+            margin-bottom: 10px; /* Espaçamento entre os botões */
+        }
+    </style>
     <div class="container">
         {% with messages = get_flashed_messages() %}
             {% if messages %}
@@ -23,12 +36,17 @@
             <input type = "hidden" name = "proxima" value = "{{proxima}}">
             <p><label>Login:</label> <input class="form-control" type="text" name="usuario" required></p>
             <p><label>Senha:</label> <input class="form-control" type="password" name="senha" required></p>
-            <p><button class="btn btn-primary" type="submit">Entrar</button></p>
+
+              <div class="btn-group-vertical">
+
+               <button type="submit" class="btn btn-primary">Entrar</button>
+
+                <a href="{{url_for('cadastrar_usuario')}}">
+                    <button type="button" class="btn btn-primary">Faça seu cadastro</button>
+                </a>
+        </div>
         </form>
 
-        <a href="{{url_for('cadastrar_usuario')}}">
-            <button class="btn btn-primary align-left" type="submit">Novo usuário</button>
-        </a>
-    </div>
+
 </body>
 </html>
